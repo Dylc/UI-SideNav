@@ -7,3 +7,7 @@ where the first element [nav] is sidenav and other [escape] is the rest space ti
 You can set `min-content` to set width to wrap sidenav
 
 ![example](https://github.com/Dylc/UI-SideNav/blob/master/example.gif)
+
+Special thanks to 
+1) https://web.dev/building-a-sidenav-component/
+2) https://habr.com/ru/post/587864/
