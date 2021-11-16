@@ -8,6 +8,7 @@ function SideNavLayout() {
                 <nav>
                     <h4>My</h4>
                     <a href="#">Dashboard</a>
+                    <a href="#">Engines</a>
                     <a href="#">Profile</a>
                     <a href="#">Preferences</a>
                     <a href="#">Archive</a>
