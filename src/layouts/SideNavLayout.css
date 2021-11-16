@@ -1,8 +1,9 @@
 /* 
 Define set of variables 
 */
+
 body {
-    --easeOutExpo: cubic-bezier(0.16,1,0.3,1);
+    --easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
     --duration: .6s;
     --surface: #e2e2e2;
     --surface2: #fffffe;
@@ -13,27 +14,31 @@ body {
     background: var(--surface);
 }
 
-h1,h2,h3,h4,figure {
+h1,
+h2,
+h3,
+h4,
+figure {
     margin: 0;
     color: var(--text);
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 2.5rem;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: 1.5rem;
     max-inline-size: 30ch;
-  }
-  
-  p {
+}
+
+p {
     line-height: 1.5;
     color: var(--text2);
     max-inline-size: 50ch;
-  }
-  
-  a {
+}
+
+a {
     color: hsl(328 100% 74%);
     outline-color: hsl(var(--brandHSL));
     outline-offset: 5px;
@@ -41,12 +46,13 @@ h1,h2,h3,h4,figure {
     line-height: 1.25;
 }
 
-  
+
 /* 
 This is main container: 1 row and 2 column
 The first column is unnamed with width of min-content
 The second column is named "stack" and occupies all the rest space (1fr) 
 */
+
 .grid-container {
     display: grid;
     grid: [stack] 1fr/min-content [stack] 1fr;
@@ -58,12 +64,14 @@ main {
     padding: 0.5rem 1.5rem;
 }
 
+
 /* 
 Set flex positions for header with hamburger menu
 This will be display only for mobile devices
 because #sidenav-button is displayed none for bigger devices 
 */
-main > header {
+
+main>header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,7 +80,7 @@ main > header {
     margin-block-end: 1rem;
 }
 
-main > article {
+main>article {
     background: var(--surface2);
     display: inline-grid;
     gap: 2ch;
@@ -84,27 +92,23 @@ main > article {
 @media (min-width: 540px) {
     #sidenav-button {
         /* Don't display hamburger menu for big screens */
-        display: none; 
-    } 
+        display: none;
+    }
 }
-
 
 @media (max-width: 540px) {
     /* 
         Once we below 540px put all context to stack grid-area 
         e.g. don't display first unnamed column in grid 
     */
-    .grid-container > * {
+    .grid-container>* {
         grid-area: stack;
     }
-
     #sidenav-open {
         visibility: hidden;
         transform: translateX(-110vw);
         will-change: transform;
-        transition:
-            transform var(--duration) var(--easeOutExpo),
-            visibility 0s linear var(--duration);
+        transition: transform var(--duration) var(--easeOutExpo), visibility 0s linear var(--duration);
         position: sticky;
         top: 0;
         max-height: 100vh;
@@ -112,14 +116,11 @@ main > article {
         overscroll-behavior: contain;
         will-change: transform;
     }
-    
     #sidenav-open:target {
         visibility: visible;
         transform: translateX(0);
-        transition:
-          transform var(--duration) var(--easeOutExpo);
-      }
-
+        transition: transform var(--duration) var(--easeOutExpo);
+    }
     #sidenav-open nav {
         background-color: var(--surface);
         box-shadow: 5px 0 40px rgb(0 0 0 / 45%);
@@ -127,11 +128,13 @@ main > article {
     }
 }
 
+
 /* 
     Set grid to sidenav
     one part - nav - will be our navigation
     another part - escape - will ve empty space with a href="#" that will close nav
 */
+
 #sidenav-open {
     display: grid;
     grid-template-columns: [nav] 2fr [escape] 1fr;
@@ -146,7 +149,6 @@ main > article {
     padding-block-start: 4.5rem;
 }
 
-
 .hamburger {
     --size: 4rem;
     align-content: center;
@@ -155,17 +157,17 @@ main > article {
     box-sizing: border-box;
     margin-right: 2em;
     outline: none;
-    transition: border-color .25s ease,background-color .25s ease;
+    transition: border-color .25s ease, background-color .25s ease;
 }
 
-.hamburger:is(:hover, :focus) svg > rect {
+.hamburger:is(:hover, :focus) svg>rect {
     stroke: hsl(var(--brandHSL));
 }
 
 .hamburger:focus {
-    border-color: rgba(255,20,146,.12);
+    border-color: rgba(255, 20, 146, .12);
     border-color: hsl(var(--brandHSL)/12%);
-    background: rgba(255,20,146,.1);
+    background: rgba(255, 20, 146, .1);
     background: hsl(var(--brandHSL)/10%);
 }
 

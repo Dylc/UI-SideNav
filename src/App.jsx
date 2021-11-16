@@ -1,12 +1,11 @@
+import React from 'react';
 import './App.css';
 import SideNavLayout from './layouts/SideNavLayout';
 
-function App() {
+const App = function () {
   return (
-    // EXAMPLES
-    // Responsive SIDENAV 
     <SideNavLayout />
   );
-}
+};
 
 export default App;
